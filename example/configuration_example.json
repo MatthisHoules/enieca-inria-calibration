@@ -1,0 +1,33 @@
+{
+    "/fibo": {
+        "url": "/fibo/{:param1}/{:param2}",
+        
+        "parameters": [
+            {
+                "name": "param1",
+                "type": "path"
+            },
+            {
+                "name": "param2",
+                "type": "path"
+            }
+        ],
+
+        "scenarios": [
+            {   
+                "parameters_values": {
+                    "param1": 5,
+                    "param2": 2
+                },
+                "qoe": 2
+            },
+            {
+                "parameters_values": {
+                    "param1": 15,
+                    "param2": 2
+                },
+                "qoe": 4
+            }
+        ]
+    }
+}
