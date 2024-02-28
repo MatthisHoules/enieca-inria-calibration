@@ -15,23 +15,22 @@ if __name__ == '__main__':
     arg_parser.add_argument('-k', '--kepler_addr', required=True, help='Kepler exporter address', type=str)
     arg_parser.add_argument('-p', '--app_container_name', required=True, help='Application Kuberneted Pod Name', type=str)
     arg_parser.add_argument('-o', '--output_path', required=True, help='Output path, could be a file path or a dir path', type=str)
+    arg_parser.add_argument('-n', '--user_load', required=True, help='number of users for the calibration', type=int)
+    arg_parser.add_argument('-i', '--calibration_iterations', required=True, help='number of iteration to calibration each scenario', type=int)
+
 
     args = arg_parser.parse_args()
-
-    # -c './tests/conf_v1.json'
-    # -k ecotype-44.nantes.grid5000.fr:9102
-    # -a http://ecotype-44.nantes.grid5000.fr:5900/
-    # -p fibonicci-app'
 
     endpoints_to_calibrate: List = read_configuration_file(args.configuration_path)
     kepler: Kepler = Kepler(args.kepler_addr)
 
     calibrated_endpoints: Dict = calibrate(
-        args.app_addr,
-        args.app_container_name,
-        endpoints_to_calibrate,
-        256,
-        kepler
+        host=args.app_addr,
+        app_container_name=args.app_container_name,
+        list_endpoints=endpoints_to_calibrate,
+        num_users=args.user_load,
+        kepler=kepler,
+        n_calibration=args.calibration_iterations
     )
     write_output_yaml_file(calibrated_endpoints, args.output_path)
 

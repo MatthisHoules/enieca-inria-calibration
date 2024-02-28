@@ -1,6 +1,7 @@
 # External Imports
 import invokust
 from locust import HttpUser, task, constant
+from locust.log import setup_logging
 from typing import Tuple, List, Dict
 import time
 from statistics import median, mean
@@ -8,6 +9,7 @@ from statistics import median, mean
 # Internal Imports
 from src.calibration.kepler import Kepler
 from src.endpoints.endpoint import Endpoint
+
 
 
 
@@ -58,13 +60,18 @@ def calibrate(host: str, app_container_name: str, list_endpoints: List[Endpoint]
                 )
 
                 loadtest = invokust.LocustLoadTest(settings)
-                loadtest.run()
-                    
+                loadtest.run()    
                 stats_loadtest: Dict = loadtest.stats()
+                
+                import json
+                with open("sample.json", "w") as outfile: 
+                    json.dump(stats_loadtest, outfile, indent=4) 
+
+                del loadtest
 
                 after_calibration_energy: Tuple[float] = kepler.get_container_consumption(app_container_name)
                 
-                list_req_s.append(stats_loadtest['num_requests'])
+                list_req_s.append(stats_loadtest['num_requests']/30)
                 list_consumption_per_request.append(round((after_calibration_energy[0] - before_calibration_energy[0]) / stats_loadtest['num_requests'], 5))
                 
                 # 50s delay to avoid overload (could lead to refused requests)

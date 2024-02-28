@@ -40,12 +40,12 @@ def write_output_yaml_file(data: Dict, file_path: str) -> None:
     """write_output_yaml_file
         
         Params:
-            data: Dict: data to write in a yaml file
-            file_path: str, dir or file path of the output yaml file. If path is a dir, the file name is set to 'output.yaml'
+            data: Dict: data to write in a yml file
+            file_path: str, dir or file path of the output yaml file. If path is a dir, the file name is set to 'output.yml'
     """
 
     if os.path.isdir(file_path):
-        file_path = os.path.join(file_path, 'output.yaml')
+        file_path = os.path.join(file_path, 'output.yml')
 
     with open(file_path, 'w') as file:
         yaml.dump(data, file, sort_keys=False)

@@ -1,0 +1,68 @@
+{
+    "/fibo": {
+        "url": "/generate-image/{:num_inference_steps}/{:n_images}",
+        
+        "parameters": [
+            {
+                "name": "num_inference_steps",
+                "type": "path"
+            },
+            {
+                "name": "n_images",
+                "type": "path"
+            }
+        ],
+
+        "scenarios": [
+            {   
+                "parameters_values": {
+                    "param1": 7,
+                    "param2": 1
+                },
+                "qoe": 1
+            },
+            {
+                "parameters_values": {
+                    "param1": 15,
+                    "param2": 1
+                },
+                "qoe": 2
+            },
+            {
+                "parameters_values": {
+                    "param1": 10,
+                    "param2": 3
+                },
+                "qoe": 3
+            },
+            {
+                "parameters_values": {
+                    "param1": 15,
+                    "param2": 3
+                },
+                "qoe": 4
+            },
+            {
+                "parameters_values": {
+                    "param1": 10,
+                    "param2": 5
+                },
+                "qoe": 5
+            },
+            {
+                "parameters_values": {
+                    "param1": 15,
+                    "param2": 5
+                },
+                "qoe": 6
+            },
+            {
+                "parameters_values": {
+                    "param1": 20,
+                    "param2": 5
+                },
+                "qoe": 8
+            }
+        ]
+    }
+}
