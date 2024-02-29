@@ -16,50 +16,50 @@
         "scenarios": [
             {   
                 "parameters_values": {
-                    "param1": 7,
-                    "param2": 1
+                    "num_inference_steps": 7,
+                    "n_images": 1
                 },
                 "qoe": 1
             },
             {
                 "parameters_values": {
-                    "param1": 15,
-                    "param2": 1
+                    "num_inference_steps": 15,
+                    "n_images": 1
                 },
                 "qoe": 2
             },
             {
                 "parameters_values": {
-                    "param1": 10,
-                    "param2": 3
+                    "num_inference_steps": 10,
+                    "n_images": 3
                 },
                 "qoe": 3
             },
             {
                 "parameters_values": {
-                    "param1": 15,
-                    "param2": 3
+                    "num_inference_steps": 15,
+                    "n_images": 3
                 },
                 "qoe": 4
             },
             {
                 "parameters_values": {
-                    "param1": 10,
-                    "param2": 5
+                    "num_inference_steps": 10,
+                    "n_images": 5
                 },
                 "qoe": 5
             },
             {
                 "parameters_values": {
-                    "param1": 15,
-                    "param2": 5
+                    "num_inference_steps": 15,
+                    "n_images": 5
                 },
                 "qoe": 6
             },
             {
                 "parameters_values": {
-                    "param1": 20,
-                    "param2": 5
+                    "num_inference_steps": 20,
+                    "n_images": 5
                 },
                 "qoe": 8
             }

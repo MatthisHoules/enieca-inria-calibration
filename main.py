@@ -18,11 +18,11 @@ if __name__ == '__main__':
     arg_parser.add_argument('-n', '--user_load', required=True, help='number of users for the calibration', type=int)
     arg_parser.add_argument('-i', '--calibration_iterations', required=True, help='number of iteration to calibration each scenario', type=int)
 
-
     args = arg_parser.parse_args()
 
     endpoints_to_calibrate: List = read_configuration_file(args.configuration_path)
     kepler: Kepler = Kepler(args.kepler_addr)
+
 
     calibrated_endpoints: Dict = calibrate(
         host=args.app_addr,

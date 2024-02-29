@@ -29,6 +29,7 @@ def calibrate(host: str, app_container_name: str, list_endpoints: List[Endpoint]
     endpoints_calibrated: dict = {"endpoints": []}
 
     for endpoint in list_endpoints:
+        
         e: dict = {
             'name': endpoint.name,
             'redirect': endpoint.endpoint_url,
@@ -36,7 +37,7 @@ def calibrate(host: str, app_container_name: str, list_endpoints: List[Endpoint]
             'benchmark': []
         }
 
-        for scenario in endpoint.process_endpoint():
+        for scenario in endpoint.process_endpoint():            
             list_req_s: List = []
             list_consumption_per_request: List = []
 
