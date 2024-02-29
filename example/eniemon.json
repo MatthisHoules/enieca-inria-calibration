@@ -1,5 +1,5 @@
 {
-    "/fibo": {
+    "/generate-image": {
         "url": "/generate-image/{:num_inference_steps}/{:n_images}",
         
         "parameters": [
@@ -16,7 +16,7 @@
         "scenarios": [
             {   
                 "parameters_values": {
-                    "num_inference_steps": 7,
+                    "num_inference_steps": 10,
                     "n_images": 1
                 },
                 "qoe": 1
