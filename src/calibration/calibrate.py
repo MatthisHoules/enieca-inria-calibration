@@ -81,14 +81,14 @@ def calibrate(host: str, app_container_name: str, list_endpoints: List[Endpoint]
             e['benchmark'].append({
                 'qoe': scenario['qoe'],
                 
-                'mean_rps': mean(list_req_s),
-                'median_rps': median(list_req_s),
-                'min_rps': min(list_req_s),
-                'max_rps': max(list_req_s),
-                'mean_joules_per_request': mean(list_consumption_per_request),
-                'median_joules_per_request': median(list_consumption_per_request),
-                'max_joules_per_request': max(list_consumption_per_request),
-                'min_joules_per_request': min(list_consumption_per_request),
+                'meanRps': mean(list_req_s),
+                'medianRps': median(list_req_s),
+                'minRps': min(list_req_s),
+                'maxRps': max(list_req_s),
+                'meanJoulesPerRequest': mean(list_consumption_per_request),
+                'medianJoulesPerRequest': median(list_consumption_per_request),
+                'maxJoulesPerRequest': max(list_consumption_per_request),
+                'minJoulesPerRequest': min(list_consumption_per_request),
 
                 'parameters': scenario['parameters']
             })
